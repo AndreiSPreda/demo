@@ -8,7 +8,7 @@ import {
   TeamOutlined,
   CarOutlined,
 } from '@ant-design/icons';
-
+import Logo from './img/logo.jpg';
 import { Breadcrumb, Layout, Menu } from 'antd';
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -47,7 +47,7 @@ const App = () => {
       }}
     >
       <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
-        <div className="logo" />
+        <div className="logo"> <img src={Logo} alt="Car Rental" style={{width:167, height:40}}/> </div>
         <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} />
       </Sider>
       <Layout className="site-layout">
