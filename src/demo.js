@@ -165,7 +165,7 @@ const App = () =>
 (
   <Layout className="layout">
     <Header>
-      
+      <title>Take A Ride</title>
       <Menu
         theme="dark"
         mode="horizontal"
@@ -199,7 +199,7 @@ const App = () =>
       <Row gutter={[16, 24]} justify="space-evenly">
         <Col xs={20} sm={16} md={12} lg={8} xl={6} xxl={4}>
           <Card
-            cover={<img src={require("./img/passat.png")} alt="passat" />}
+            cover={<img src={require("./assets/img/passat.png")} alt="passat" />}
             title="Volkswagen Passat"
             extra={<a href="#">Detalii</a>}
             style={{
@@ -215,7 +215,7 @@ const App = () =>
         </Col>
         <Col xs={20} sm={16} md={12} lg={8} xl={6} xxl={4}>
           <Card
-            cover={<img src={require("./img/passat.png")} alt="passat" />}
+            cover={<img src={require("./assets/img/passat.png")} alt="passat" />}
             title="Volkswagen Passat"
             extra={<a href="#">Detalii</a>}
             style={{
@@ -231,7 +231,7 @@ const App = () =>
         </Col>
         <Col xs={20} sm={16} md={12} lg={8} xl={6} xxl={4}>
           <Card
-            cover={<img src={require("./img/passat.png")} alt="passat" />}
+            cover={<img src={require("./assets/img/passat.png")} alt="passat" />}
             title="Volkswagen Passat"
             extra={<a href="#">Detalii</a>}
             style={{
@@ -247,7 +247,7 @@ const App = () =>
         </Col>
         <Col xs={20} sm={16} md={12} lg={8} xl={6} xxl={4}>
           <Card
-            cover={<img src={require("./img/passat.png")} alt="passat" />}
+            cover={<img src={require("./assets/img/passat.png")} alt="passat" />}
             title="Volkswagen Passat"
             extra={<a href="#">Detalii</a>}
             style={{
@@ -263,7 +263,7 @@ const App = () =>
         </Col>
         <Col xs={20} sm={16} md={12} lg={8} xl={6} xxl={4}>
           <Card
-            cover={<img src={require("./img/passat.png")} alt="passat" />}
+            cover={<img src={require("./assets/img/passat.png")} alt="passat" />}
             title="Volkswagen Passat"
             extra={<a href="#">Detalii</a>}
             style={{
@@ -279,7 +279,7 @@ const App = () =>
         </Col>
         <Col xs={20} sm={16} md={12} lg={8} xl={6} xxl={4}>
           <Card
-            cover={<img src={require("./img/passat.png")} alt="passat" />}
+            cover={<img src={require("./assets/img/passat.png")} alt="passat" />}
             title="Volkswagen Passat"
             extra={<a href="#">Detalii</a>}
             style={{
@@ -295,7 +295,7 @@ const App = () =>
         </Col>
         <Col xs={20} sm={16} md={12} lg={8} xl={6} xxl={4}>
           <Card
-            cover={<img src={require("./img/passat.png")} alt="passat" />}
+            cover={<img src={require("./assets/img/passat.png")} alt="passat" />}
             title="Volkswagen Passat"
             extra={<a href="#">Detalii</a>}
             style={{
@@ -310,7 +310,7 @@ const App = () =>
           </Card>
         </Col>
       </Row>
-      <Pagination align={'center'} defaultCurrent={1} total={500} />
+      <Pagination align={'center'} defaultCurrent={1} total={50} />
     </Content>
     
     <Footer
@@ -318,7 +318,7 @@ const App = () =>
         textAlign: "center"
       }}
     >
-      Ant Design ©2018 Created by Ant UED
+      Hello
     </Footer>
   </Layout>
 ); 
