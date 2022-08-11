@@ -1,16 +1,12 @@
 import React from "react";
 import "antd/dist/antd.css";
-import "./content.css";
-import { Card } from "antd";
-import { Breadcrumb} from "antd";
-import { Col, Row } from "antd";
-import { Pagination } from 'antd';
-import { Cascader } from 'antd';
+import onChange from "react";
+import { Card, Cascader, Breadcrumb, Col, Row, Pagination, } from "antd";
 import { TeamOutlined, CalendarOutlined,SettingOutlined, BgColorsOutlined, FireOutlined} from '@ant-design/icons';
 
 
-const App = () => 
-(
+export default function Content( {cars, locations} ) {
+return(
 
 <Content
       style={{
@@ -30,15 +26,15 @@ const App = () =>
         <Breadcrumb.Item>Passat</Breadcrumb.Item>
       </Breadcrumb>
       <div className="site-layout-content">Content</div>
-      <Cascader size="large" options={optionslocation} onChange={onChange} />
-      <Cascader size="large" options={optionsbrand} onChange={onChange} />
+      <Cascader size="large" options={cars} onChange={onChange} />
+      <Cascader size="large" options={locations} onChange={onChange} />
     
       <br/>
       <br/>
       <Row gutter={[16, 24]} justify="space-evenly">
         <Col xs={20} sm={16} md={12} lg={8} xl={6} xxl={4}>
           <Card
-            cover={<img src={require("./assets/img/passat.png")} alt="passat" />}
+            cover={<img src={require("../../assets/img/passat.png")} alt="passat" />}
             title="Volkswagen Passat"
             extra={<a href="#">Detalii</a>}
             style={{
@@ -49,12 +45,12 @@ const App = () =>
             <p><BgColorsOutlined /> Culoare: Gri</p>
             <p><SettingOutlined /> Cutie de viteze: Manuala</p>
             <p><CalendarOutlined /> An: 2016</p>
-            <p>< TeamOutlined/> Locuri: 5</p>
+            <p><TeamOutlined/> Locuri: 5</p>
           </Card>
         </Col>
         <Col xs={20} sm={16} md={12} lg={8} xl={6} xxl={4}>
           <Card
-            cover={<img src={require("./assets/img/passat.png")} alt="passat" />}
+            cover={<img src={require("../../assets/img/passat.png")} alt="passat" />}
             title="Volkswagen Passat"
             extra={<a href="#">Detalii</a>}
             style={{
@@ -65,12 +61,12 @@ const App = () =>
             <p><BgColorsOutlined /> Culoare: Gri</p>
             <p><SettingOutlined /> Cutie de viteze: Manuala</p>
             <p><CalendarOutlined /> An: 2016</p>
-            <p>< TeamOutlined/> Locuri: 5</p>
+            <p><TeamOutlined/> Locuri: 5</p>
           </Card>
         </Col>
         <Col xs={20} sm={16} md={12} lg={8} xl={6} xxl={4}>
           <Card
-            cover={<img src={require("./assets/img/passat.png")} alt="passat" />}
+            cover={<img src={require("../../assets/img/passat.png")} alt="passat" />}
             title="Volkswagen Passat"
             extra={<a href="#">Detalii</a>}
             style={{
@@ -81,12 +77,12 @@ const App = () =>
             <p><BgColorsOutlined /> Culoare: Gri</p>
             <p><SettingOutlined /> Cutie de viteze: Manuala</p>
             <p><CalendarOutlined /> An: 2016</p>
-            <p>< TeamOutlined/> Locuri: 5</p>
+            <p><TeamOutlined/> Locuri: 5</p>
           </Card>
         </Col>
         <Col xs={20} sm={16} md={12} lg={8} xl={6} xxl={4}>
           <Card
-            cover={<img src={require("./assets/img/passat.png")} alt="passat" />}
+            cover={<img src={require("../../assets/img/passat.png")} alt="passat" />}
             title="Volkswagen Passat"
             extra={<a href="#">Detalii</a>}
             style={{
@@ -97,12 +93,12 @@ const App = () =>
             <p><BgColorsOutlined /> Culoare: Gri</p>
             <p><SettingOutlined /> Cutie de viteze: Manuala</p>
             <p><CalendarOutlined /> An: 2016</p>
-            <p>< TeamOutlined/> Locuri: 5</p>
+            <p><TeamOutlined/> Locuri: 5</p>
           </Card>
         </Col>
         <Col xs={20} sm={16} md={12} lg={8} xl={6} xxl={4}>
           <Card
-            cover={<img src={require("./assets/img/passat.png")} alt="passat" />}
+            cover={<img src={require("../../assets/img/passat.png")} alt="passat" />}
             title="Volkswagen Passat"
             extra={<a href="#">Detalii</a>}
             style={{
@@ -113,12 +109,12 @@ const App = () =>
             <p><BgColorsOutlined /> Culoare: Gri</p>
             <p><SettingOutlined /> Cutie de viteze: Manuala</p>
             <p><CalendarOutlined /> An: 2016</p>
-            <p>< TeamOutlined/> Locuri: 5</p>
+            <p><TeamOutlined/> Locuri: 5</p>
           </Card>
         </Col>
         <Col xs={20} sm={16} md={12} lg={8} xl={6} xxl={4}>
           <Card
-            cover={<img src={require("./assets/img/passat.png")} alt="passat" />}
+            cover={<img src={require("../../assets/img/passat.png")} alt="passat" />}
             title="Volkswagen Passat"
             extra={<a href="#">Detalii</a>}
             style={{
@@ -129,12 +125,12 @@ const App = () =>
             <p><BgColorsOutlined /> Culoare: Gri</p>
             <p><SettingOutlined /> Cutie de viteze: Manuala</p>
             <p><CalendarOutlined /> An: 2016</p>
-            <p>< TeamOutlined/> Locuri: 5</p>
+            <p><TeamOutlined/> Locuri: 5</p>
           </Card>
         </Col>
         <Col xs={20} sm={16} md={12} lg={8} xl={6} xxl={4}>
           <Card
-            cover={<img src={require("./assets/img/passat.png")} alt="passat" />}
+            cover={<img src={require("../../assets/img/passat.png")} alt="passat" />}
             title="Volkswagen Passat"
             extra={<a href="#">Detalii</a>}
             style={{
@@ -145,11 +141,11 @@ const App = () =>
             <p><BgColorsOutlined /> Culoare: Gri</p>
             <p><SettingOutlined /> Cutie de viteze: Manuala</p>
             <p><CalendarOutlined /> An: 2016</p>
-            <p>< TeamOutlined/> Locuri: 5</p>
+            <p><TeamOutlined/> Locuri: 5</p>
           </Card>
         </Col>
       </Row>
       <Pagination align={'center'} defaultCurrent={1} total={50} />
     </Content>
 );
-export default App;
+          }
