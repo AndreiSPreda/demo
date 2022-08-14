@@ -1,14 +1,6 @@
 import React from "react";
 import { Layout } from "antd";
 
-export default function Footer() {
-  <Layout className="layout">
-  <Footer
-  style={{
-    textAlign: "center"
-  }}
->
-  Hello
-</Footer>
-  </Layout>
+export default function Footer({ children }) {
+  return <Layout.Footer>Footer</Layout.Footer>;
 }

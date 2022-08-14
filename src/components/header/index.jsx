@@ -1,6 +1,8 @@
 import React from "react";
 import "antd/dist/antd.css";
 import { Layout, Menu } from "antd";
+import { useAppContext } from "../../containers/App/context";
+import menu from "../../menu";
 
 function getItem(label, key, icon, children) {
   return {
@@ -11,14 +13,17 @@ function getItem(label, key, icon, children) {
   }
 }
 
-const items = [
-  getItem('Acasa', '1'),
-  getItem('Masini', '2'),
-  getItem('Profilul meu', '3')
-];
-
 
 export default function  Header() {
+
+  const { setPath } = useAppContext();
+
+  const onMenuClick = ({ item }) => {
+    const _path = item.props?.path;
+    console.log(_path);
+    setPath(_path);
+  };
+
     return (
       
         <Layout.Header className="app-header">
@@ -26,8 +31,9 @@ export default function  Header() {
     <Menu
       theme="dark"
       mode="horizontal"
-      defaultSelectedKeys={["2"]}
-      items={items}
+      defaultSelectedKeys={["/Cars"]}
+      items={menu}
+      onClick={onMenuClick}
     />
      </Layout.Header>
     )

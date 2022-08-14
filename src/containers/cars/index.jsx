@@ -1,10 +1,19 @@
 import React from "react";
 import {  Card, Cascader, Breadcrumb, Col, Row, Pagination  } from "antd";
-import {locations, cars } from "./options";
+import {locations, cars } from "../Cars/options";
 import { TeamOutlined, CalendarOutlined,SettingOutlined, BgColorsOutlined, FireOutlined} from '@ant-design/icons';
+import { useAppContext } from "../App/context";
 import onChange from "react";
 
-export default function Cars( {cars, locations} ) {
+export default function Cars() {
+  const { setPath } = useAppContext();
+
+  const onRowClick = (row) => {
+    const path = `/cars/${row.key}`;
+    console.log(path);
+    setPath(path);
+  };
+
   return(
 
 <div>
@@ -12,9 +21,10 @@ export default function Cars( {cars, locations} ) {
 
 <Breadcrumb
     style={{
-      padding: "0 50px"
+      padding: "0 100px"
     }}
     >
+
     <Breadcrumb.Item>Acasa</Breadcrumb.Item>
     <Breadcrumb.Item>Masini</Breadcrumb.Item>
     <Breadcrumb.Item>Volkswagen</Breadcrumb.Item>

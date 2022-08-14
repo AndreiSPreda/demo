@@ -1,21 +1,9 @@
 import React from "react";
-import Cars from "../../containers/cars/index"
+import { Layout } from "antd";
 
 
 
 
-export default function Content( ) {
-return(
-
-<div
-      style={{
-        padding: "0 50px"
-      }}
-    >
-
-      
-      
-      <Cars></Cars>
-  </div>
-);
+export default function Content( { children } ) {
+  return <Layout.Content className="main-content">{children}</Layout.Content>;
           }
