@@ -1,9 +1,9 @@
-import { createRoot } from 'react-dom/client';
-import 'antd/dist/antd.min.css';
-import App from './containers/app';
 
-const container = document.getElementById('root');
+import React from 'react';
+import {createRoot} from 'react-dom/client';
+import App from './containers/app/index';
+import "antd/dist/antd.min.css";
 
-const root = createRoot(container);
+const root = createRoot(document.getElementById('container'));
 
-root.render(<App />);
+root.render(<App/>);
