@@ -1,6 +1,14 @@
 
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Demo from './demo';
+import {createRoot} from 'react-dom/client';
+import App from './containers/App/index';
+import "antd/dist/antd.min.css";
+import AppContextProvider from "./containers/App/context";
 
-ReactDOM.render(<Demo />, document.getElementById('container'));
+const root = createRoot(document.getElementById('container'));
+
+root.render(
+  <AppContextProvider>
+    <App />
+  </AppContextProvider>
+);
