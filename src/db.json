@@ -1,75 +1,89 @@
 {
-    cars : [
+    "cars" : [
     {
-        "marca": "Volskwagen ",
+        "marca": "Volskwagen",
         "model": "Passat",
         "combustibil": "Diesel",
         "culoare": "Gri",
         "transmisie": "Manuala",
         "an": 2016,
         "locuri": 5,
-        "img": "/assets/img/passat.png"
+        "img": "/assets/img/passat.png",
+        "country": "Romania",
+        "city":"Brasov"
     },
     {
-        "marca": "Audi ",
+        "marca": "Audi",
         "model": "A3",
         "combustibil": "Benzina",
         "culoare": "Negru",
         "transmisie": "Manuala",
         "an": 2016,
         "locuri": 5,
-        "img": "/assets/img/audi-a3.png"
+        "img": "/assets/img/audi-a3.png",
+        "country": "Romania",
+        "city":"Brasov"
     },
 
     {
-        "marca": "Toyota ",
+        "marca": "Toyota",
         "model": "Corolla",
         "combustibil": "Benzina (Hybrid)",
         "culoare": "Rosu",
         "transmisie": "Automata",
         "an": 2020,
         "locuri": 5,
-        "img": "./assets/img/toyota-corolla.png"
+        "img": "/assets/img/toyota-corolla.png",
+        "country": "Romania",
+        "city":"Brasov"
     },
     {
-        "marca": "Dacia ",
+        "marca": "Dacia",
         "model": "Spring",
         "combustibil": "Electric",
         "culoare": "Gri",
         "transmisie": "Automata",
         "an": 2021,
         "locuri": 5,
-        "img": "./assets/img/dacia-spring.png"
+        "img": "/assets/img/dacia-spring.png",
+        "country": "Romania",
+        "city":"Brasov"
     },
     {
-        "marca": "Volskwagen ",
+        "marca": "Volskwagen",
         "model": "Polo",
         "combustibil": "Benzina",
         "culoare": "Gri",
         "transmisie": "Automata",
         "an": 2018,
         "locuri": 5,
-        "img": "./assets/img/vw-polo.png"
+        "img": "/assets/img/vw-polo.png",
+        "country": "Romania",
+        "city":"Brasov"
     },
     {
-        "marca": "Volskwagen ",
+        "marca": "Volskwagen",
         "model": "e-Up",
         "combustibil": "Electric",
         "culoare": "Galben",
         "transmisie": "Automata",
         "an": 2019,
         "locuri": 5,
-        "img": "./assets/img/vw-e-up.png"
+        "img": "/assets/img/vw-e-up.png",
+        "country": "Romania",
+        "city":"Brasov"
     },
     {
-        "marca": "Audi ",
+        "marca": "Audi",
         "model": "A4",
         "combustibil": "Diesel",
         "culoare": "Gri",
         "transmisie": "Manuala",
         "an": 2015,
         "locuri": 5,
-        "img": "./assets/img/audi-a4.png"
+        "img": "/assets/img/audi-a4.png",
+        "country": "Romania",
+        "city":"Brasov"
     }
 ]
 }
