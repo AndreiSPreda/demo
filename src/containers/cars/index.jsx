@@ -1,155 +1,60 @@
-import React from "react";
-import {  Card, Cascader, Breadcrumb, Col, Row, Pagination  } from "antd";
-import {locations, cars } from "../Cars/options";
-import { TeamOutlined, CalendarOutlined,SettingOutlined, BgColorsOutlined, FireOutlined} from '@ant-design/icons';
+import React, { useState } from "react";
+import CarView from "../../components/CarView";
 import { useAppContext } from "../App/context";
 import onChange from "react";
+import { useEffect } from "react";
+import { fetchUsersApi } from "../../api";
+import { Cascader } from "antd";
+import { cars, locations } from "./options"
+import Data from "../../db";
+
+
 
 export default function Cars() {
-  const { setPath } = useAppContext();
+  const [vehicles, setVehicles] = useState(Data.cars);
+  const [carType, setCarType] = useState();
+  const [location, setLocation] = useState();
 
-  const onRowClick = (row) => {
-    const path = `/cars/${row.key}`;
-    console.log(path);
-    setPath(path);
-  };
+  const onCarTypeChange = (type) => {
+    console.log(type);
+    setCarType(type);
+  }
+  const onLocationChange = (loc) => {
+    console.log();
+    setLocation(loc);
+  }
+  useEffect(() => {
+    setVehicles(() => {
+      const typeVehicles = Data.cars.filter((vehicle) => {
+        if (!carType) {
+          return true;
+        }
 
-  return(
+        return carType.includes(vehicle.marca) && carType.includes(vehicle.model);
 
-<div>
-  
+      });
+      const newVehicles = typeVehicles.filter((vehicle) => {
+        if (!location) {
+          return true;
+        }
+        return location.includes(vehicle.country) && location.includes(vehicle.city)
+      })
+      return newVehicles;
+    })
+  }, [carType, location])
 
-<Breadcrumb
-    style={{
-      padding: "0 100px"
-    }}
-    >
+  return (
+    <div >
+      <br />
+      <br />
 
-    <Breadcrumb.Item>Acasa</Breadcrumb.Item>
-    <Breadcrumb.Item>Masini</Breadcrumb.Item>
-    <Breadcrumb.Item>Volkswagen</Breadcrumb.Item>
-    <Breadcrumb.Item>Passat</Breadcrumb.Item>
-    </Breadcrumb>
-      <Cascader size="large" options={cars} onChange={onChange} />
-      <Cascader size="large" options={locations} onChange={onChange} />
-    
-      <br/>
-      <br/>
-      <Row gutter={[16, 24]} justify="space-evenly">
-        <Col xs={20} sm={16} md={12} lg={8} xl={6} xxl={4}>
-          <Card
-            cover={<img src={require("../../assets/img/passat.png")} alt="passat" />}
-            title="Volkswagen Passat"
-            extra={<a href="#">Detalii</a>}
-            style={{
-              width: 250
-            }}
-          >
-            <p><FireOutlined /> Combustibil: Diesel</p>
-            <p><BgColorsOutlined /> Culoare: Gri</p>
-            <p><SettingOutlined /> Cutie de viteze: Manuala</p>
-            <p><CalendarOutlined /> An: 2016</p>
-            <p><TeamOutlined/> Locuri: 5</p>
-          </Card>
-        </Col>
-        <Col xs={20} sm={16} md={12} lg={8} xl={6} xxl={4}>
-          <Card
-            cover={<img src={require("../../assets/img/passat.png")} alt="passat" />}
-            title="Volkswagen Passat"
-            extra={<a href="#">Detalii</a>}
-            style={{
-              width: 250
-            }}
-          >
-            <p><FireOutlined /> Combustibil: Diesel</p>
-            <p><BgColorsOutlined /> Culoare: Gri</p>
-            <p><SettingOutlined /> Cutie de viteze: Manuala</p>
-            <p><CalendarOutlined /> An: 2016</p>
-            <p><TeamOutlined/> Locuri: 5</p>
-          </Card>
-        </Col>
-        <Col xs={20} sm={16} md={12} lg={8} xl={6} xxl={4}>
-          <Card
-            cover={<img src={require("../../assets/img/passat.png")} alt="passat" />}
-            title="Volkswagen Passat"
-            extra={<a href="#">Detalii</a>}
-            style={{
-              width: 250
-            }}
-          >
-            <p><FireOutlined /> Combustibil: Diesel</p>
-            <p><BgColorsOutlined /> Culoare: Gri</p>
-            <p><SettingOutlined /> Cutie de viteze: Manuala</p>
-            <p><CalendarOutlined /> An: 2016</p>
-            <p><TeamOutlined/> Locuri: 5</p>
-          </Card>
-        </Col>
-        <Col xs={20} sm={16} md={12} lg={8} xl={6} xxl={4}>
-          <Card
-            cover={<img src={require("../../assets/img/passat.png")} alt="passat" />}
-            title="Volkswagen Passat"
-            extra={<a href="#">Detalii</a>}
-            style={{
-              width: 250
-            }}
-          >
-            <p><FireOutlined /> Combustibil: Diesel</p>
-            <p><BgColorsOutlined /> Culoare: Gri</p>
-            <p><SettingOutlined /> Cutie de viteze: Manuala</p>
-            <p><CalendarOutlined /> An: 2016</p>
-            <p><TeamOutlined/> Locuri: 5</p>
-          </Card>
-        </Col>
-        <Col xs={20} sm={16} md={12} lg={8} xl={6} xxl={4}>
-          <Card
-            cover={<img src={require("../../assets/img/passat.png")} alt="passat" />}
-            title="Volkswagen Passat"
-            extra={<a href="#">Detalii</a>}
-            style={{
-              width: 250
-            }}
-          >
-            <p><FireOutlined /> Combustibil: Diesel</p>
-            <p><BgColorsOutlined /> Culoare: Gri</p>
-            <p><SettingOutlined /> Cutie de viteze: Manuala</p>
-            <p><CalendarOutlined /> An: 2016</p>
-            <p><TeamOutlined/> Locuri: 5</p>
-          </Card>
-        </Col>
-        <Col xs={20} sm={16} md={12} lg={8} xl={6} xxl={4}>
-          <Card
-            cover={<img src={require("../../assets/img/passat.png")} alt="passat" />}
-            title="Volkswagen Passat"
-            extra={<a href="#">Detalii</a>}
-            style={{
-              width: 250
-            }}
-          >
-            <p><FireOutlined /> Combustibil: Diesel</p>
-            <p><BgColorsOutlined /> Culoare: Gri</p>
-            <p><SettingOutlined /> Cutie de viteze: Manuala</p>
-            <p><CalendarOutlined /> An: 2016</p>
-            <p><TeamOutlined/> Locuri: 5</p>
-          </Card>
-        </Col>
-        <Col xs={20} sm={16} md={12} lg={8} xl={6} xxl={4}>
-          <Card
-            cover={<img src={require("../../assets/img/passat.png")} alt="passat" />}
-            title="Volkswagen Passat"
-            extra={<a href="#">Detalii</a>}
-            style={{
-              width: 250
-            }}
-          >
-            <p><FireOutlined /> Combustibil: Diesel</p>
-            <p><BgColorsOutlined /> Culoare: Gri</p>
-            <p><SettingOutlined /> Cutie de viteze: Manuala</p>
-            <p><CalendarOutlined /> An: 2016</p>
-            <p><TeamOutlined/> Locuri: 5</p>
-          </Card>
-        </Col>
-      </Row>
-      <Pagination align={'center'} defaultCurrent={1} total={50} />
+      <Cascader size="large" options={cars} onChange={onCarTypeChange} />
+      <Cascader size="large" options={locations} onChange={onLocationChange} />
+      <br />
+      <br />
+      <CarView cars={vehicles} />
     </div>
-  );
-          }
+  )
+
+};
+
